@@ -1,0 +1,65 @@
+    .c-progress-bar {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        box-shadow: 0px 1px 10px blue;
+        border-radius: 999px;
+    }
+    
+    .c-progress-bar .c-progress-active {
+        position: relative;
+        top: -154px;
+    } 
+    .page {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        width: 150px;
+        margin: 20px auto;
+    }
+    
+    .c-progress-bar p {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        top: -242px;
+        text-align: center;
+        font-weight: 1px;
+        transition: all ease .3s;
+        font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .c-progress-bar .play {
+        position: relative;
+        top: -253px;
+        text-align: center;
+        width: 150px;
+        left: 5px;
+        font-size: 40px;
+        color: #00B4FF;
+        transition: all ease-in-out .3s;
+    }
+    
+    .c-progress-bar .play:hover {
+        text-shadow: 0px 0.5px 10px aquamarine;
+        transition: all ease .3s;
+        cursor: pointer;
+    }
+    
+    .c-progress-bar .pause {
+        position: relative;
+        top: -235px;
+        text-align: center;
+        width: 150px;
+        left: 2px;
+        font-size: 20px;
+        color: lightseagreen;
+        transition: all ease .3s;
+    }
+    
+    .c-progress-bar .pause:hover {
+        text-shadow: 0px 0.5px 10px aquamarine;
+        transition: all ease .3s;
+        cursor: pointer;
+    }

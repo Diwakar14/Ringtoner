@@ -1,0 +1,61 @@
+#Turn Rewrite Engine On
+RewriteEngine On
+RewriteBase /RingtoneProject/
+
+
+# Disable Directory Listings in this Directory and Subdirectories
+# This will hide the files from the public unless they know direct URLs
+Options -Indexes
+
+RewriteRule ^(css|images|js|fonts) - [L]
+#Re write for index.php
+RewriteRule ^Home index.php [NC,L]
+#Rewrite rule for sitemap
+RewriteRule ^sitemap\.xml/?$ sitemapGen.php [NC,L]
+
+
+#Rewrite rule for sitemap
+#RewriteRule ^uploader/user/ AccessDenied.php [NC,L]
+
+#Re write for index.php
+RewriteRule ^instrumental instrumental.php [NC,L]
+
+#Rewrite rule for music_download.php?id=xxxxx
+RewriteRule ^ringtone/([0-9]+)/([0-9a-zA-Z_-]+) music_download.php?id=$1&rt$2 [NC,L]
+#Rewrite rule for tags.php?tags=xxxxx
+RewriteRule ^tags/([0-9a-zA-Z_-]+) tags.php?tags=$1 [NC,L]
+#Rewrite rule for ringtone.php?key=xxxxx&pn=xxxxx
+RewriteRule ^ringtones/([0-9a-zA-Z_-]+)/([0-9]+)/ ringtone.php?key=$1&pn=$2 [NC,L]
+#Rewrite rule for category.php?cat=xxxxx
+RewriteRule ^category/([0-9a-zA-Z_-]+) category.php?cat=$1 [NC,L]
+#Rewrite rule for sorting.php?date=xxxxx
+RewriteRule ^sort/([0-9a-zA-Z_-]+)/ sorting.php?date=$1 [NC,L]
+#Rewrite rule for download.php?id=xxxxx
+RewriteRule ^download/fastdownload/([0-9]+)/ download.php?id=$1 [NC,L]
+#Rewrite rule for search.php
+RewriteRule ^search_data/ search.php [NC,L]
+#Rewrite rule for profile.php?user=xxxxx
+RewriteRule ^profile/user/([0-9a-zA-Z_-]+)/([0-9]+)/ profile.php?user=$1&pn=$2 [NC,L]
+
+
+#Rewrite rule for uplaoder/index.php
+RewriteRule ^uploader/users/login/([0-9a-zA-Z_-]+) uploader/index.php?r=$1 [NC,L]
+#Rewrite rule for uplaoder/signup.php
+RewriteRule ^uploader/users/signup uploader/signup.php [NC,L]
+#Rewrite rule for uplaoder/upload.php
+RewriteRule ^uploader/upload/ uploader/upload.php [NC,L]
+
+
+
+##Rewrite rule for admin/admin_login.php
+RewriteRule ^adminLogin admin/admin_login.php [NC,L]
+
+##Rewrite rule for admin/admin_login.php
+RewriteRule ^admin_live/([0-9]+)/live admin/adminLive.php?pn=$1 [NC,L]
+RewriteRule ^admin_live/live admin/adminLive.php [NC,L]
+
+##Rewrite rule for admin/admin.php
+RewriteRule ^admin/dashboard admin/admin.php [NC,L]
+
+##Rewrite rule for admin/admin_ses.php
+RewriteRule ^admin/logout admin/admin_ses.php [NC,L]
